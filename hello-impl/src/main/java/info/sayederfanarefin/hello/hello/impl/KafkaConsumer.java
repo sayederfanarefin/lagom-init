@@ -19,9 +19,7 @@ import akka.stream.javadsl.Sink;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.inject.Singleton;
 import info.sayederfanarefin.hello.hello.api.ExternalService;
-import info.sayederfanarefin.hello.hello.api.GreetingMessage;
 
-import org.apache.commons.lang3.StringUtils;
 
 import javax.inject.Inject;
 
@@ -61,12 +59,18 @@ public class KafkaConsumer {
                 );
 
 // send this as a message over the WebSocket
+
+        String src =
+                "{ \"event\": \"subscribe\", \"channel\": \"book\",  \"symbol\": \"tBTCUSD\", \"prec\": \"P0\", \"freq\": \"F0\" }";
+
+
+
         Source<Message, NotUsed> helloSource =
-                Source.single(TextMessage.create("hello world"));
+                Source.single(TextMessage.create(src));
 
 
         Flow<Message, Message, CompletionStage<WebSocketUpgradeResponse>> webSocketFlow =
-                http.webSocketClientFlow(WebSocketRequest.create("ws://echo.websocket.org"));
+                http.webSocketClientFlow(WebSocketRequest.create("wss://api-pub.bitfinex.com/ws/2"));
 
 
         Pair<CompletionStage<WebSocketUpgradeResponse>, CompletionStage<Done>> pair =
