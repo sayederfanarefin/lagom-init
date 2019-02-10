@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="da4373dd-ca22-460c-ad37-ed2b157eb81d" name="Default Changelist" comment="" />
+    <list default="true" id="da4373dd-ca22-460c-ad37-ed2b157eb81d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/hello-api-build.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/hello-api.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/hello-api.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/hello-build.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/hello-build.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/hello-impl-build.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/hello-impl.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/hello-impl.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/hello-stream-api-build.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/hello-stream-api.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/hello-stream-api.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/hello-stream-impl-build.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/hello-stream-impl.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/hello-stream-impl.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sbt.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sbt.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello-impl/src/main/java/info/sayederfanarefin/hello/hello/impl/KafkaConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/hello-impl/src/main/java/info/sayederfanarefin/hello/hello/impl/KafkaConsumer.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/project/project/target/" />
     <ignored path="$PROJECT_DIR$/project/target/" />
@@ -59,109 +73,16 @@
       </state>
     </system>
   </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="1551384096">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="4" />
-          <entry key="project.open.time.11" value="1" />
-          <entry key="project.open.time.122" value="1" />
-          <entry key="project.open.time.142" value="1" />
-          <entry key="project.open.time.4" value="1" />
-          <entry key="project.open.time.55" value="1" />
-          <entry key="project.open.time.60" value="1" />
-          <entry key="project.open.time.7" value="1" />
-          <entry key="project.open.time.88" value="1" />
-          <entry key="project.opened" value="8" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="HOCON" value="2" />
-          <entry key="JAVA" value="25" />
-          <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Properties" value="1" />
-          <entry key="Scala" value="2" />
-          <entry key="sbt" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="HOCON" value="3" />
-          <entry key="JAVA" value="179" />
-          <entry key="sbt" value="2" />
-        </counts>
-      </usages-collector>
-    </session>
-  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hello-impl/src/main/java/info/sayederfanarefin/hello/hello/impl/HelloServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="73" column="86" selection-start-line="73" selection-start-column="86" selection-end-line="73" selection-end-column="86" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hello-impl/src/main/java/info/sayederfanarefin/hello/hello/impl/HelloModule.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="16" column="53" selection-start-line="16" selection-start-column="53" selection-end-line="16" selection-end-column="53" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hello-api/src/main/java/info/sayederfanarefin/hello/hello/api/ExternalService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hello-api/src/main/java/info/sayederfanarefin/hello/hello/api/UserData.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="552">
-              <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#705#706#0" expanded="true" />
-                <element signature="e#739#740#0" expanded="true" />
-                <element signature="e#779#780#0" expanded="true" />
-                <element signature="e#811#812#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/hello-impl/src/main/java/info/sayederfanarefin/hello/hello/impl/KafkaConsumer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="23" column="40" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="40" />
+            <state relative-caret-position="366">
+              <caret line="43" column="14" selection-start-line="43" selection-start-column="14" selection-end-line="43" selection-end-column="14" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/.ivy2/cache/com.typesafe.akka/akka-actor_2.12/srcs/akka-actor_2.12-2.5.19-sources.jar!/akka/japi/function/Function.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="199">
-              <caret line="13" column="6" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -182,6 +103,9 @@
       <find>Hello,</find>
     </findStrings>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -199,15 +123,9 @@
       </list>
     </option>
   </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
-  </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1361" />
-    <option name="y" value="-19" />
+    <option name="x" value="1358" />
+    <option name="y" value="-8" />
     <option name="width" value="1234" />
     <option name="height" value="1040" />
   </component>
@@ -216,7 +134,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -338,6 +255,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -371,6 +289,7 @@
       <setting name="tasks" value="runAll" />
       <setting name="vmparams" value="-Xms512M -Xmx1024M -Xss1M -XX:+CMSClassUnloadingEnabled" />
       <setting name="workingDir" value="$PROJECT_DIR$" />
+      <setting name="useSbtShell" value="false" />
       <method v="2" />
     </configuration>
   </component>
@@ -387,44 +306,28 @@
           <value>
             <list>
               <ExternalProjectPojo>
-                <option name="name" value="hello-stream-api [file:/C:/Users/Erfan/Desktop/stuff/Lagom/lagom-java-sbt/]" />
-                <option name="path" value="$PROJECT_DIR$/hello-stream-api" />
-              </ExternalProjectPojo>
-              <ExternalProjectPojo>
                 <option name="name" value="hello-stream-impl [file:/C:/Users/Erfan/Desktop/stuff/Lagom/lagom-java-sbt/]" />
                 <option name="path" value="$PROJECT_DIR$/hello-stream-impl" />
               </ExternalProjectPojo>
               <ExternalProjectPojo>
-                <option name="name" value="hello [file:/C:/Users/Erfan/Desktop/stuff/Lagom/lagom-java-sbt/]" />
-                <option name="path" value="$PROJECT_DIR$" />
+                <option name="name" value="hello-stream-api [file:/C:/Users/Erfan/Desktop/stuff/Lagom/lagom-java-sbt/]" />
+                <option name="path" value="$PROJECT_DIR$/hello-stream-api" />
               </ExternalProjectPojo>
               <ExternalProjectPojo>
                 <option name="name" value="hello-impl [file:/C:/Users/Erfan/Desktop/stuff/Lagom/lagom-java-sbt/]" />
                 <option name="path" value="$PROJECT_DIR$/hello-impl" />
               </ExternalProjectPojo>
               <ExternalProjectPojo>
+                <option name="name" value="hello [file:/C:/Users/Erfan/Desktop/stuff/Lagom/lagom-java-sbt/]" />
+                <option name="path" value="$PROJECT_DIR$" />
+              </ExternalProjectPojo>
+              <ExternalProjectPojo>
                 <option name="name" value="hello-api [file:/C:/Users/Erfan/Desktop/stuff/Lagom/lagom-java-sbt/]" />
                 <option name="path" value="$PROJECT_DIR$/hello-api" />
               </ExternalProjectPojo>
               <ExternalProjectPojo>
-                <option name="name" value="hello-build [file:/C:/Users/Erfan/Desktop/stuff/Lagom/lagom-java-sbt/]" />
+                <option name="name" value="hello-build" />
                 <option name="path" value="$PROJECT_DIR$/project" />
-              </ExternalProjectPojo>
-              <ExternalProjectPojo>
-                <option name="name" value="hello-api-build [file:/C:/Users/Erfan/Desktop/stuff/Lagom/lagom-java-sbt/]" />
-                <option name="path" value="$PROJECT_DIR$/hello-api/project" />
-              </ExternalProjectPojo>
-              <ExternalProjectPojo>
-                <option name="name" value="hello-impl-build [file:/C:/Users/Erfan/Desktop/stuff/Lagom/lagom-java-sbt/]" />
-                <option name="path" value="$PROJECT_DIR$/hello-impl/project" />
-              </ExternalProjectPojo>
-              <ExternalProjectPojo>
-                <option name="name" value="hello-stream-api-build [file:/C:/Users/Erfan/Desktop/stuff/Lagom/lagom-java-sbt/]" />
-                <option name="path" value="$PROJECT_DIR$/hello-stream-api/project" />
-              </ExternalProjectPojo>
-              <ExternalProjectPojo>
-                <option name="name" value="hello-stream-impl-build [file:/C:/Users/Erfan/Desktop/stuff/Lagom/lagom-java-sbt/]" />
-                <option name="path" value="$PROJECT_DIR$/hello-stream-impl/project" />
               </ExternalProjectPojo>
             </list>
           </value>
@@ -464,11 +367,12 @@
       <workItem from="1549730765537" duration="1362000" />
       <workItem from="1549734526835" duration="3197000" />
       <workItem from="1549743258252" duration="3243000" />
+      <workItem from="1549814482612" duration="1203000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33870000" />
+    <option name="totallyTimeSpent" value="35073000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -483,15 +387,17 @@
     <frame x="1358" y="-8" width="1234" height="1040" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2802385" />
+      <window_info id="DB Browser" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28534922" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
       <window_info id="Favorites" order="4" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" weight="0.3294979" />
+      <window_info anchor="bottom" id="DB Execution Console" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3294979" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32910052" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -500,9 +406,11 @@
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="SBT Console" order="10" weight="0.3294979" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.29811716" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.2973545" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
       <window_info anchor="bottom" id="Build" order="13" weight="0.19769874" />
+      <window_info anchor="bottom" id="Messages" order="14" weight="0.3294979" />
+      <window_info anchor="right" id="Maven" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -516,9 +424,6 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
-  </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/hello-impl/src/main/java/info/sayederfanarefin/hello/hello/impl/HelloState.java">
@@ -639,7 +544,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/hello-impl/src/main/java/info/sayederfanarefin/hello/hello/impl/HelloServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
+        <state relative-caret-position="1288">
           <caret line="73" column="86" selection-start-line="73" selection-start-column="86" selection-end-line="73" selection-end-column="86" />
         </state>
       </provider>
@@ -648,6 +553,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="368">
           <caret line="16" column="53" selection-start-line="16" selection-start-column="53" selection-end-line="16" selection-end-column="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hello-api/src/main/java/info/sayederfanarefin/hello/hello/api/ExternalService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -668,27 +583,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hello-api/src/main/java/info/sayederfanarefin/hello/hello/api/ExternalService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.ivy2/cache/com.typesafe.akka/akka-actor_2.12/srcs/akka-actor_2.12-2.5.19-sources.jar!/akka/japi/function/Function.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
+        <state relative-caret-position="253">
           <caret line="13" column="6" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hello-impl/src/main/java/info/sayederfanarefin/hello/hello/impl/KafkaConsumer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="23" column="40" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="40" />
+        <state relative-caret-position="366">
+          <caret line="43" column="14" selection-start-line="43" selection-start-column="14" selection-end-line="43" selection-end-column="14" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

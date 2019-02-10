@@ -9,13 +9,9 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/hello-api" />
-            <option value="$PROJECT_DIR$/hello-api/project" />
             <option value="$PROJECT_DIR$/hello-impl" />
-            <option value="$PROJECT_DIR$/hello-impl/project" />
             <option value="$PROJECT_DIR$/hello-stream-api" />
-            <option value="$PROJECT_DIR$/hello-stream-api/project" />
             <option value="$PROJECT_DIR$/hello-stream-impl" />
-            <option value="$PROJECT_DIR$/hello-stream-impl/project" />
             <option value="$PROJECT_DIR$/project" />
           </set>
         </option>
