@@ -54,6 +54,12 @@ public class KafkaConsumer {
 
     }
     private void ccc() {
+        String url= "wss://api-pub.bitfinex.com/ws/2" ;
+        String src =
+                "{ \"event\": \"subscribe\", \"channel\": \"book\",  \"symbol\": \"tBTCUSD\", \"prec\": \"P0\", \"freq\": \"F0\" }";
+
+        TextMessage textMessage = TextMessage.create(src);
+
         ActorSystem system = ActorSystem.create();
         Materializer materializer = ActorMaterializer.create(system);
         Http http = Http.get(system);
@@ -67,10 +73,7 @@ public class KafkaConsumer {
 
 // send this as a message over the WebSocket
 
-        String src =
-                "{ \"event\": \"subscribe\", \"channel\": \"book\",  \"symbol\": \"tBTCUSD\", \"prec\": \"P0\", \"freq\": \"F0\" }";
 
-        TextMessage textMessage = TextMessage.create(src);
 
 
 
@@ -89,7 +92,7 @@ public class KafkaConsumer {
 
         final Pair<CompletionStage<WebSocketUpgradeResponse>, CompletableFuture<Optional<Message>>> pair =
                 http.singleWebSocketRequest(
-                        WebSocketRequest.create("wss://api-pub.bitfinex.com/ws/2"),
+                        WebSocketRequest.create(url),
                         flow,
                         materializer);
 
