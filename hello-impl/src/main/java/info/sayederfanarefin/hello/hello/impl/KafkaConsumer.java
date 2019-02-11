@@ -28,57 +28,34 @@ import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionStage;
 
-import static jdk.nashorn.internal.runtime.regexp.joni.Config.log;
-
 @Singleton
 public class KafkaConsumer {
 
+    String url= "wss://api-pub.bitfinex.com/ws/2" ;
+    String src =
+            "{ \"event\": \"subscribe\", \"channel\": \"book\",  \"symbol\": \"tBTCUSD\", \"prec\": \"P0\", \"freq\": \"F0\" }";
 
-    private final ExternalService kafkaService;
-    private ObjectMapper jsonMapper = new ObjectMapper();
+    TextMessage textMessage = TextMessage.create(src);
 
-    @Inject
-    public KafkaConsumer(ExternalService kafkaService) {
-        this.kafkaService = kafkaService;
-//        kafkaService.getPosts().invoke();
+    public KafkaConsumer() {
         System.out.println(" ********* it works ***********");
-
-         ccc();
-        log.println(" ********* it works ***********");
-//        kafkaService.greetingsTopic().subscribe()
-//                .atLeastOnce(Flow.fromFunction(this::displayMessage));
+        getBitfinex();
     }
 
 
-    private void aaa(){
+    private void getBitfinex(){
 
-    }
-    private void ccc() {
-        String url= "wss://api-pub.bitfinex.com/ws/2" ;
-        String src =
-                "{ \"event\": \"subscribe\", \"channel\": \"book\",  \"symbol\": \"tBTCUSD\", \"prec\": \"P0\", \"freq\": \"F0\" }";
-
-        TextMessage textMessage = TextMessage.create(src);
-
-        ActorSystem system = ActorSystem.create();
-        Materializer materializer = ActorMaterializer.create(system);
-        Http http = Http.get(system);
-
-// print each incoming text message
-// would throw exception on non strict or binary message
         Sink<Message, CompletionStage<Done>> printSink =
                 Sink.foreach((message) ->
                         System.out.println("****************************Got message: " + message.asTextMessage().getStrictText())
                 );
 
-// send this as a message over the WebSocket
 
+        ActorSystem system = ActorSystem.create();
+        Materializer materializer = ActorMaterializer.create(system);
+        Http http = Http.get(system);
 
-
-
-
-
-        // emit "one" and then "two" and then keep the source from completing
+// emit "one" and then "two" and then keep the source from completing
         final Source<Message, CompletableFuture<Optional<Message>>> source =
                 Source.from(Arrays.<Message>asList(textMessage))
                         .concatMat(Source.maybe(), Keep.right());
@@ -90,15 +67,40 @@ public class KafkaConsumer {
                         source,
                         Keep.right());
 
+
         final Pair<CompletionStage<WebSocketUpgradeResponse>, CompletableFuture<Optional<Message>>> pair =
                 http.singleWebSocketRequest(
                         WebSocketRequest.create(url),
                         flow,
                         materializer);
 
- //     at some later time we want to disconnect
-        pair.second().complete(Optional.empty());
+        CompletionStage<WebSocketUpgradeResponse> upgradeCompletion = pair.first();
 
+        CompletableFuture<Optional<Message>> closed = pair.second();
+
+        CompletionStage<Done> connected = upgradeCompletion.thenApply(upgrade->
+        {
+
+            System.out.println("************* response *************** " + upgrade.response().status());
+
+            // just like a regular http request we can access response status which is available via upgrade.response.status
+            // status code 101 (Switching Protocols) indicates that server support WebSockets
+            if (upgrade.response().status().equals(StatusCodes.SWITCHING_PROTOCOLS)) {
+                return Done.getInstance();
+            } else {
+                throw new RuntimeException(("Connection failed: " + upgrade.response().status()));
+            }
+        });
+
+        connected.thenAccept(done -> connected());
+        closed.thenAccept(done -> System.out.println("************* Connection closed"));
+
+// at some later time we want to disconnect
+   //     pair.second().complete(Optional.empty());
+    }
+
+    private void connected(){
+        System.out.println("************* Connected");
     }
 
 }
