@@ -23,6 +23,9 @@ import info.sayederfanarefin.hello.hello.api.ExternalService;
 
 import javax.inject.Inject;
 
+import java.util.Arrays;
+import java.util.Optional;
+import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionStage;
 
 import static jdk.nashorn.internal.runtime.regexp.joni.Config.log;
@@ -39,14 +42,18 @@ public class KafkaConsumer {
         this.kafkaService = kafkaService;
 //        kafkaService.getPosts().invoke();
         System.out.println(" ********* it works ***********");
-        ccc();
-        log.println(" ********* it works ***********" );
+
+         ccc();
+        log.println(" ********* it works ***********");
 //        kafkaService.greetingsTopic().subscribe()
 //                .atLeastOnce(Flow.fromFunction(this::displayMessage));
     }
 
 
-    private void ccc(){
+    private void aaa(){
+
+    }
+    private void ccc() {
         ActorSystem system = ActorSystem.create();
         Materializer materializer = ActorMaterializer.create(system);
         Http http = Http.get(system);
@@ -55,7 +62,7 @@ public class KafkaConsumer {
 // would throw exception on non strict or binary message
         Sink<Message, CompletionStage<Done>> printSink =
                 Sink.foreach((message) ->
-                        System.out.println("Got message: " + message.asTextMessage().getStrictText())
+                        System.out.println("****************************Got message: " + message.asTextMessage().getStrictText())
                 );
 
 // send this as a message over the WebSocket
@@ -63,59 +70,32 @@ public class KafkaConsumer {
         String src =
                 "{ \"event\": \"subscribe\", \"channel\": \"book\",  \"symbol\": \"tBTCUSD\", \"prec\": \"P0\", \"freq\": \"F0\" }";
 
+        TextMessage textMessage = TextMessage.create(src);
 
 
-        Source<Message, NotUsed> helloSource =
-                Source.single(TextMessage.create(src));
 
 
-        Flow<Message, Message, CompletionStage<WebSocketUpgradeResponse>> webSocketFlow =
-                http.webSocketClientFlow(WebSocketRequest.create("wss://api-pub.bitfinex.com/ws/2"));
+        // emit "one" and then "two" and then keep the source from completing
+        final Source<Message, CompletableFuture<Optional<Message>>> source =
+                Source.from(Arrays.<Message>asList(textMessage))
+                        .concatMat(Source.maybe(), Keep.right());
 
 
-        Pair<CompletionStage<WebSocketUpgradeResponse>, CompletionStage<Done>> pair =
-                helloSource.viaMat(webSocketFlow, Keep.right())
-                        .toMat(printSink, Keep.both())
-                        .run(materializer);
+        final Flow<Message, Message, CompletableFuture<Optional<Message>>> flow =
+                Flow.fromSinkAndSourceMat(
+                        printSink,
+                        source,
+                        Keep.right());
 
+        final Pair<CompletionStage<WebSocketUpgradeResponse>, CompletableFuture<Optional<Message>>> pair =
+                http.singleWebSocketRequest(
+                        WebSocketRequest.create("wss://api-pub.bitfinex.com/ws/2"),
+                        flow,
+                        materializer);
 
-// The first value in the pair is a CompletionStage<WebSocketUpgradeResponse> that
-// completes when the WebSocket request has connected successfully (or failed)
-        CompletionStage<WebSocketUpgradeResponse> upgradeCompletion = pair.first();
+ //     at some later time we want to disconnect
+        pair.second().complete(Optional.empty());
 
-// the second value is the completion of the sink from above
-// in other words, it completes when the WebSocket disconnects
-        CompletionStage<Done> closed = pair.second();
-
-        CompletionStage<Done> connected = upgradeCompletion.thenApply(upgrade->
-        {
-            // just like a regular http request we can access response status which is available via upgrade.response.status
-            // status code 101 (Switching Protocols) indicates that server support WebSockets
-            if (upgrade.response().status().equals(StatusCodes.SWITCHING_PROTOCOLS)) {
-                return Done.getInstance();
-            } else {
-                throw new RuntimeException(("Connection failed: " + upgrade.response().status()));
-            }
-        });
-
-// in a real application you would not side effect here
-// and handle errors more carefully
-        connected.thenAccept(done -> System.out.println("Connected"));
-        closed.thenAccept(done -> System.out.println("Connection closed"));
     }
 
-//    private Done displayMessage(String message) {
-//        System.out.println("Message :::::::::::  " + message);
-//        try {
-//            GreetingMessage greetingMessage = jsonMapper.readValue(message, GreetingMessage.class);
-//            if (StringUtils.isNotEmpty(greetingMessage.message)) {
-//                System.out.println("Action performed :::::::::::  " + message);
-//
-//                // Do your action here
-//            }
-//        } catch (Exception ex) {
-//            System.out.println("Error in consuming kafka message");
-//        }
-//        return Done.getInstance();
-//    }
 }
